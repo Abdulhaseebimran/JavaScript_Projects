@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-image: url('./images/ramadan.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+}
+
+h1{
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 80px;
+    font-style: italic;
+}
+
+.count {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    gap: 40px;
+    margin: 100px 0;
+}
+
+.count .item {
+    width: 110px;
+    height: 100px;
+    margin-bottom: 10px;
+    padding: 10px 10px;
+    box-sizing: border-box;
+    /* background-color: blueviolet; */
+}
+
+.item .value{
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.item .label{
+    font-size: 22px;
+    text-align: center;
+    font-weight: bold;
+}
+
+footer{
+    color: white;
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 20px 0;
+}
+
+@media  screen and (max-width: 768px){
+    .count{
+        flex-direction: column;
+    }
+    
+}
+/* 
+@media screen and (max-width: 400) {
+   
+} */
