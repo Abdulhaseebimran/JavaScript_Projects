@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h3,
+h1,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f5f5;
+}
+
+.fb-logo {
+  width: 40px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 30px;
+}
+
+.fb-logo img {
+  width: 100%;
+}
+
+.profile-pic {
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.post-time {
+  display: none;
+  align-items: center;
+  gap: 5px;
+}
+
+.post {
+  box-shadow: rgba(18, 36, 44, 0.12) 0px 2px 4px 0px,
+    rgba(23, 46, 56, 0.32) 0px 2px 16px 10px;
+}
+
+.post-time p {
+  font-size: 12px;
+}
+
+.post-time i {
+  font-size: 10px;
+}
+
+.friends {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 14px;
+  color: #070606;
+  background-color: rgb(232, 225, 225);
+  padding: 6px 12px;
+}
+
+textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  resize: none;
+  font-size: 16px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+li {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+}
+
+li:hover {
+  background-color: rgb(222, 222, 222);
+}
+
+.colorInput {
+  width: 26px;
+  height: 24px;
+  border: none;
+}
+
+.colorInput::-webkit-color-swatch {
+  border-radius: 40%;
+}
+
+.backgroundColorIcon {
+  width: 30px;
+  height: 30px;
+  border: none;
+}
+
+.backgroundColorIcon::-webkit-color-swatch {
+  border-radius: 8px;
+}
+
+.backgrounds li img {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+}
+
+#postBackground {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 240px;
+  font-size: 24px;
+}
+
+hr {
+  color: gray;
+  padding: 0;
+  margin: 0;
+}
+
+#postBackground img:hover {
+  border: 2px solid #000000;
+  opacity: 0.5;
+}
+
+.feedback {
+  display: none;
+  align-items: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.feedback button {
+  border: none;
+  font-weight: 500;
+  color: rgb(113, 113, 113);
+}
+
+#like,
+#comment,
+#share {
+  background-color: white;
+  transition: all 0.2s;
+}
+
+#like:hover,
+#comment:hover,
+#share:hover {
+  transform: scale(1.1);
+}
+
+#post {
+  background-color: #e4e6eb;
+  color: black;
+  font-size: 18px;
+  padding: 10px;
+}
+
+#post:hover {
+  background-color: rgb(50, 50, 210);
+  color: white;
+}
