@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Protest Riot", sans-serif;
+}
+
+.navbar {
+  background-color: #1B1A55 !important;
+  padding: 10px 0;
+}
+.navbar-brand {
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.navbar-toggler{
+  color: white !important;
+  background-color: white !important;
+}
+
+.btn {
+  background-color: #fff !important;
+  color: #1B1A55;
+  font-weight: bold;
+  border: 2px solid #fff;
+}
+.btn:hover {
+  color: #fff !important;
+  background-color: red !important;
+  border: 2px solid #fff;
+}
+.form-select {
+  width: 250px;
+}
+.card-img-top {
+  width: 300px;
+  height: 150px !important;
+  height: inherit;
+  object-fit: cover;
+}
+
+.card {
+  margin: 10px;
+  padding: 20px 10px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 12px rgba(0.1, 0.1, 0.1, 0.1); 
+  background-color: #fff;
+  transition: all ease-in 0.3s linear; 
+  cursor: pointer;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transform: translateY(-5px) scale(1.05);
+  transition: all ease-in 0.3s linear;
+}
+
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.card-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.color {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  border: 1px solid #1B1A55;
+  margin-right: 5px;
+}
+.color-main{
+  display: flex;
+  flex-direction: row; 
+}
+.card-body > h2 {
+  color: #1B1A55;
+}
+
+.card{
+  width: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border: none;
+}
+
+footer{
+  background-color: #1B1A55;
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.my-footer > p{
+  margin: 10px 0;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.my-footer p > a{
+  color: whitesmoke;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 22px;
+  padding-left: 6px;
+}
+
+.my-footer p > a:hover{
+  color: red;
+}
+
+
+
+@media (max-width: 800px) {
+    .form-select{
+      margin: 10px !important;
+    }
+    .btn{
+      margin-left: 10px;
+    }
+}
+
+@media (max-width: 350px) {
+  .form-select{
+    margin: 10px !important;
+  }
+  .navbar-brand{
+    font-size: 24px !important;
+  }
+  .navbar-toggler{
+    font-size: 18px !important;
+  }
+  nav{
+    width: 100% !important;
+  }
+}
