@@ -7,6 +7,10 @@
   font-family: "Protest Riot", sans-serif;
 }
 
+nav{
+  width: 100%;
+}
+
 .navbar {
   background-color: #1B1A55 !important;
   padding: 10px 0;
@@ -91,12 +95,27 @@
 }
 
 .card{
-  width: 350px;
+  width: 330px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 5px;
   border: none;
+}
+
+#car-div{
+  margin: 20px 0 !important;
+  padding: 10px !important;
+}
+
+.clear-btn{
+  margin: 10px 20px;
+  background-color: #1B1A55;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 footer{
@@ -135,7 +154,7 @@ footer{
     }
 }
 
-@media (max-width: 350px) {
+@media (max-width: 450px) {
   .form-select{
     margin: 10px !important;
   }
@@ -147,5 +166,28 @@ footer{
   }
   nav{
     width: 100% !important;
+  }
+  .card{
+    width: 310px;
+    padding: 0px !important;
+  }
+  .card-img-top{
+    width: 250px !important;
+    height: 150px !important;
+  }
+  .card-body > h2{
+    font-size: 20px;
+  }
+  .card-body > p{
+    font-size: 16px;
+  }
+  .my-footer > p{
+    font-size: 18px;
+  }
+  #car-div{
+    margin: 10px 0 !important;
+  }
+  .clear-btn{
+    margin: 10px 10px;
   }
 }

@@ -124,7 +124,7 @@ let carsObj = {
       src: "./images/sportage.jpg",
     },
     sonet: {
-      name: "Kia Sonet",
+      Name: "Kia Sonet",
       Model: 2021,
       Price: 200000,
       Color: ["white", "black", "blue"],
@@ -133,7 +133,7 @@ let carsObj = {
       src: "images/sonet.jpg",
     },
     stonic: {
-      name: "Kia Stonic",
+      Name: "Kia Stonic",
       Model: 2018,
       Price: 100000,
       Color: ["white", "black", "red"],
@@ -256,6 +256,8 @@ function searchCars() {
    </div>
 </div>
 </div>`;
+  }else{
+   alert("Please select Car Brand and Model");
   }
 }
 
@@ -290,4 +292,16 @@ function allCarsLoading() {
         </div>`;
     }
   }
+}
+
+
+function fieldClear (){
+  carBrands.value = "";
+  carModels.value = "";
+  carShow.innerHTML = "";
+  carBrands.innerHTML = `<option value="">Select Company</option>`;
+  for (let company in carsObj) {
+    carBrands.innerHTML += `<option value="${company}">${company.toUpperCase()}</option>`;
+  }
+  allCarsLoading(); // sari cars ko load karega phir se
 }
