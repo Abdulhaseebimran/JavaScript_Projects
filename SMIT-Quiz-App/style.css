@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* .navbar{
+    background-color: #f8f9fa;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+} */
+
+.navbar-toggler{
+    color: #000 !important;
+}
+
+.container-fluid > img{
+    width: 150px;
+    height: 100px;
+    padding: 10px;
+}
+
+.btn-login {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    padding: 10px;
+    gap: 10px;
+}
+
+.heading{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+.heading > p{
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.card{
+    text-align: center;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    margin: 10px;
+}
+
+.card-body {
+    padding: none;
+}
+
+.card:hover{
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px, rgba(0, 0, 0, 0.23) 0px 6px 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-join-card{
+    border: 2px solid #007bff;
+    padding: 5px 30px !important;
+}
+
+.btn-join-card:hover{
+    background-color: red !important;
+    color: #fff;
+    border: none;
+    transition: all 0.3s ease-in-out;
+}
+
+.inst-span{
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+.container{
+    margin-bottom: 100px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #f8f9fa;
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    /* position: sticky; */
+    bottom: 0;
+    width: 100%;
+}
+
+@media screen and (max-width: 900px){
+    .btn-login{
+        display: flex;
+        align-items: start;
+        justify-content: start;
+        gap: 10px;
+        margin-top: 10px;
+    }
+}
