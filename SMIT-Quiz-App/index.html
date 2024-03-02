@@ -31,7 +31,7 @@
     </div>
     <!-- card show -->
     <div class="container-fluid" id="course-cards">
-        <div class="row row-cols-md-3 g-4">
+        <div class="row row-cols-md-3 row-cols-sm-2 g-4">
             <div class="col">
                 <div class="card">
                     <div class="card-body">
@@ -314,6 +314,37 @@
             <button class="submit-key" onclick="startQuiz()">Submit</button>
             <button class="back" onclick="backToHome()">Back</button>
         </div>
+    </section>
+    <!-- Quiz form -->
+    <section id="quizes">
+        <div class="quiz-form" id="quizForm">
+            <div class="quiz-title">
+            <h2>Quiz</h2>
+            </div>
+            <div class="question">
+                <h5 id="questionGenerate"></h5>
+            </div>
+                <div class="options">
+                    <input type="radio" name="option" id="option1" value="option1">
+                    <label for="option1" id="option1_radio"></label>
+                </div>
+                <div class="options">
+                    <input type="radio" name="option" id="option2" value="option2">
+                    <label for="option2" id="option2_radio"></label>
+                </div>
+                <div class="options">
+                    <input type="radio" name="option" id="option3" value="option3">
+                    <label for="option3" id="option3_radio"></label>
+                </div>
+                <div class="options">
+                    <input type="radio" name="option" id="option4" value="option4">
+                    <label for="option4" id="option4_radio"></label>
+                </div> 
+                <div class="submit">
+                    <button class="submit-key" onclick="nextQuestion()">Next</button>
+                    <button class="submit-key" onclick="SubmitQuiz()">Submit Quiz</button>
+                </div>
+            </div>
     </section>
     
     <!-- footer -->

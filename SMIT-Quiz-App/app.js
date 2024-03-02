@@ -2,70 +2,70 @@
 
 let mcqsQuestion = [
     {
-        question: "1- What does CSS stand for?",
+        question: "What does CSS stand for?",
         a: "Creative Style Sheets",
         b: "Cascading Style Sheets",
         c: "Computer Style Sheets",
         d: "Colorful Style Sheets"
     },
     {
-        question: "2- Which HTML tag is used to define an unordered list?",
+        question: "Which HTML tag is used to define an unordered list?",
         a: "<list>",
         b: "<ul>",
         c: "<ol>",
         d: "<li></li>"
     },
     {
-        question: "3- Which of the following is NOT a valid JavaScript data type?",
+        question: "Which of the following is NOT a valid JavaScript data type?",
         a: "string",
         b: "boolean",
         c: "character",
         d: "number"
     },
     {
-        question: "4- What does the 'href' attribute in the anchor tag (<a>) specify?",
+        question: "What does the 'href' attribute in the anchor tag (<a>) specify?",
         a: "The height of the link",
         b: "The color of the link",
         c: "The destination URL of the link",
         d: "The font family of the link"
     },
     {
-        question: "5- In JavaScript, which keyword is used to declare a variable?",
+        question: "In JavaScript, which keyword is used to declare a variable?",
         a: "var",
         b: "let",
         c: "const",
         d: "set"
     },
     {
-        question: "6- Which CSS property is used to change the color of text?",
+        question: "Which CSS property is used to change the color of text?",
         a: "text-color",
         b: "color",
         c: "font-color",
         d: "text-style"
     },
     {
-        question: "7- What does the HTML <canvas> element provide?",
+        question: "What does the HTML <canvas> element provide?",
         a: "A container for graphics",
         b: "A container for text",
         c: "A container for audio",
         d: "A container for video"
     },
     {
-        question: "8- Which method is used to add a new element to the end of an array in JavaScript?",
+        question: "Which method is used to add a new element to the end of an array in JavaScript?",
         a: "append()",
         b: "push()",
         c: "add()",
         d: "insert()"
     },
     {
-        question: "9- What is the purpose of the CSS property 'float'?",
+        question: "What is the purpose of the CSS property 'float'?",
         a: "To align text within a block",
         b: "To clear floated elements",
         c: "To position an element to the right or left of its container",
         d: "To set the opacity of an element"
     },
     {
-        question: "10- What does the JavaScript function 'querySelector()' do?",
+        question: "What does the JavaScript function 'querySelector()' do?",
         a: "It selects the first element that matches a specified CSS selector",
         b: "It selects all elements that match a specified CSS selector",
         c: "It selects the last element that matches a specified CSS selector",
@@ -87,6 +87,7 @@ let keySctions = document.getElementById("keySection");
 let inputPassowrd = document.getElementById("password");
 let backToMain = document.getElementById("backs");
 let myFooter = document.getElementById("my-footer");
+let quizForm = document.getElementById("quizes");
 function JoinCourse() {
     courseCards.style.display = "none";
     courseList.style.display = "block";
@@ -151,12 +152,37 @@ function backToHome() {
     courseList7.style.display = "none";
     courseList8.style.display = "none";
     courseList9.style.display = "none";
+    keySctions.style.display = "none";
 }
 
-// function startQuiz() {
-//     if()
-
-// }
+function startQuiz(){
+    let topHeading = document.querySelector(".heading");
+    if(inputPassowrd.value === "haseeb"){
+        keySctions.style.display = "none";
+        topHeading.style.display = "none";
+        quizForm.style.display = "block";
+        quizForm.style.display = "block";
+        Swal.fire({
+            position: "top-center",
+            icon: "success",
+            title: "Your Quiz has been Started",
+            showConfirmButton: false,
+            timer: 1500
+          });
+    }else if(inputPassowrd.value === ""){
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Please Enter a valid Key...",
+          });
+    }else{
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Please Enter Correct Key...!",
+          });
+    }
+}
 
 function key() {
     keySctions.style.display = "flex";
@@ -171,4 +197,49 @@ function key() {
     courseList9.style.display = "none";
     myFooter.style.position = "fixed";
     myFooter.style.bottom = 0;
+}
+
+let questionGenerate = document.getElementById("questionGenerate");
+let option1 = document.getElementById("option1_radio");
+let option2 = document.getElementById("option2_radio");
+let option3 = document.getElementById("option3_radio");
+let option4 = document.getElementById("option4_radio");
+
+let questionNumber = 0;
+let score = 0;
+let totalQuestions = mcqsQuestion.length;
+
+function loadQuestion() {
+    let question = mcqsQuestion[questionNumber];
+    questionGenerate.textContent = (questionNumber + 1) + ". " + question.question;
+    option1.textContent = question.a;
+    option2.textContent = question.b;
+    option3.textContent = question.c;
+    option4.textContent = question.d;
+}
+
+loadQuestion(); // Load the first question
+
+
+function nextQuestion() {
+    let selectedOption = document.querySelector('input[name="option"]:checked');
+    if (!selectedOption) {
+        Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "Please select an option...!",
+          });
+        return;
+    }
+    let currentQuestion = mcqsQuestion[questionNumber];
+    if (selectedOption.value === currentQuestion.correctAnswer) {
+        score++;
+    }
+    questionNumber++;
+    if (questionNumber === mcqsQuestion.length) {
+        endQuiz();
+        return;
+    }
+
+    loadQuestion();
 }
