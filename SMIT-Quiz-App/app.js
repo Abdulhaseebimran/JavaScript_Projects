@@ -157,11 +157,13 @@ function backToHome() {
 
 function startQuiz(){
     let topHeading = document.querySelector(".heading");
+    let navBar = document.querySelector(".navbar");
     if(inputPassowrd.value === "haseeb"){
         keySctions.style.display = "none";
         topHeading.style.display = "none";
-        quizForm.style.display = "block";
-        quizForm.style.display = "block";
+        quizForm.style.display = "flex";
+        myFooter.style.display = "block";
+        // navBar.style.display = "block";
         Swal.fire({
             position: "top-center",
             icon: "success",
@@ -232,8 +234,8 @@ function nextQuestion() {
         return;
     }
     let currentQuestion = mcqsQuestion[questionNumber];
-    if (selectedOption.value === currentQuestion.correctAnswer) {
-        score++;
+    if (selectedOption.value === currentQuestion.a) {
+        score += 10;
     }
     questionNumber++;
     if (questionNumber === mcqsQuestion.length) {
