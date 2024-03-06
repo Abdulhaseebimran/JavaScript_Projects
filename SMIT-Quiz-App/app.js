@@ -2,87 +2,85 @@
 
 let mcqsQuestion = [
   {
-    question: "What does CSS stand for?",
-    a: "Creative Style Sheets",
-    b: "Cascading Style Sheets",
-    c: "Computer Style Sheets",
-    d: "Colorful Style Sheets",
-    correctAnswer: "Cascading Style Sheets",
+    "question": "What does CSS stand for?",
+    "a": "Creative Style Sheets",
+    "b": "Cascading Style Sheets",
+    "c": "Computer Style Sheets",
+    "d": "Colorful Style Sheets",
+    "correctAnswer": "b",
   },
   {
-    question: "Which HTML tag is used to define an unordered list?",
-    a: "<list>",
-    b: "<ul>",
-    c: "<ol>",
-    d: "<li></li>",
-    correctAnswer: "<ul>",
+    "question": "Which HTML tag is used to define an unordered list?",
+    "a": "<list>",
+    "b": "<ul>",
+    "c": "<ol>",
+    "d": "<li></li>",
+    "correctAnswer": "b",
   },
   {
-    question: "Which of the following is NOT a valid JavaScript data type?",
-    a: "string",
-    b: "boolean",
-    c: "character",
-    d: "number",
-    correctAnswer: "character",
+    "question": "Which of the following is NOT a valid JavaScript data type?",
+    "a": "string",
+    "b": "boolean",
+    "c": "character",
+    "d": "number",
+    "correctAnswer": "c",
   },
   {
-    question: "What does the 'href' attribute in the anchor tag (<a>) specify?",
-    a: "The height of the link",
-    b: "The color of the link",
-    c: "The destination URL of the link",
-    d: "The font family of the link",
-    correctAnswer: "The destination URL of the link",
+    "question": "What does the 'href' attribute in the anchor tag (<a>) specify?",
+    "a": "The height of the link",
+    "b": "The color of the link",
+    "c": "The destination URL of the link",
+    "d": "The font family of the link",
+    "correctAnswer": "c",
   },
   {
-    question: "In JavaScript, which keyword is used to declare a variable?",
-    a: "var",
-    b: "let",
-    c: "const",
-    d: "set",
-    correctAnswer: "var",
+    "question": "In JavaScript, which keyword is used to declare a variable?",
+    "a": "var",
+    "b": "let",
+    "c": "const",
+    "d": "set",
+    "correctAnswer": "a",
   },
   {
-    question: "Which CSS property is used to change the color of text?",
-    a: "text-color",
-    b: "color",
-    c: "font-color",
-    d: "text-style",
-    correctAnswer: "color",
+    "question": "Which CSS property is used to change the color of text?",
+    "a": "text-color",
+    "b": "color",
+    "c": "font-color",
+    "d": "text-style",
+    "correctAnswer": "b",
   },
   {
-    question: "What does the HTML <canvas> element provide?",
-    a: "A container for graphics",
-    b: "A container for text",
-    c: "A container for audio",
-    d: "A container for video",
-    correctAnswer: "A container for graphics",
+    "question": "What does the HTML <canvas> element provide?",
+    "a": "A container for graphics",
+    "b": "A container for text",
+    "c": "A container for audio",
+    "d": "A container for video",
+    "correctAnswer": "a",
   },
   {
-    question:
+    "question":
       "Which method is used to add a new element to the end of an array in JavaScript?",
-    a: "append()",
-    b: "push()",
-    c: "add()",
-    d: "insert()",
-    correctAnswer: "push()",
+    "a": "append()",
+    "b": "push()",
+    "c": "add()",
+    "d": "insert()",
+    "correctAnswer": "b",
   },
   {
-    question: "What is the purpose of the CSS property 'float'?",
-    a: "To align text within a block",
-    b: "To clear floated elements",
-    c: "To position an element to the right or left of its container",
-    d: "To set the opacity of an element",
-    correctAnswer:
-      "To position an element to the right or left of its container",
+    "question": "What is the purpose of the CSS property 'float'?",
+    "a": "To align text within a block",
+    "b": "To clear floated elements",
+    "c": "To position an element to the right or left of its container",
+    "d": "To set the opacity of an element",
+    "correctAnswer": "c",
   },
   {
-    question: "What does the JavaScript function 'querySelector()' do?",
-    a: "It selects the first element that matches a specified CSS selector",
-    b: "It selects all elements that match a specified CSS selector",
-    c: "It selects the last element that matches a specified CSS selector",
-    d: "It selects elements based on their IDs",
-    correctAnswer:
-      "It selects the first element that matches a specified CSS selector",
+    "question": "What does the JavaScript function 'querySelector()' do?",
+    "a": "It selects the first element that matches a specified CSS selector",
+    "b": "It selects all elements that match a specified CSS selector",
+    "c": "It selects the last element that matches a specified CSS selector",
+    "d": "It selects elements based on their IDs",
+    "correctAnswer": "a",
   },
 ];
 
@@ -101,6 +99,7 @@ let inputPassowrd = document.getElementById("password");
 let backToMain = document.getElementById("backs");
 let myFooter = document.getElementById("my-footer");
 let quizForm = document.getElementById("quizes");
+let resultDiv = document.getElementById("result");
 function JoinCourse() {
   courseCards.style.display = "none";
   courseList.style.display = "block";
@@ -166,6 +165,7 @@ function backToHome() {
   courseList8.style.display = "none";
   courseList9.style.display = "none";
   keySctions.style.display = "none";
+  resultDiv.style.display = "none";
 }
 
 function startQuiz() {
@@ -220,91 +220,68 @@ let option2 = document.getElementById("option2_radio");
 let option3 = document.getElementById("option3_radio");
 let option4 = document.getElementById("option4_radio");
 let nextBtn = document.querySelector("#nextBtn");
+let submitBtn = document.querySelector("#submitBtn");
+let allInputs = document.querySelectorAll("input[type='radio']");
 
-let questionNumber = 0;
-let score = 0;
-let totalQuestions = mcqsQuestion.length;
 
+let correct = 0,
+    incorrect = 0,
+    total = mcqsQuestion.length;
+let index = 0;
 function loadQuestion() {
-  let question = mcqsQuestion[questionNumber];
-  questionGenerate.textContent = questionNumber + 1 + ". " + question.question;
-  option1.textContent = question.a;
-  option2.textContent = question.b;
-  option3.textContent = question.c;
-  option4.textContent = question.d;
+  if(total === index) {
+    return endQuiz();
+  }
+  reset();
+  let data = mcqsQuestion[index];
+  console.log(data);
+  questionGenerate.innerHTML = `${index + 1}) ${data.question}`;
+  allInputs[0].nextElementSibling.innerText = data.a;
+  allInputs[1].nextElementSibling.innerText = data.b;
+  allInputs[2].nextElementSibling.innerText = data.c;
+  allInputs[3].nextElementSibling.innerText = data.d;
 }
 
-loadQuestion(); // Load the first question
+loadQuestion();
 
-function nextQuestion() {
-  let selectedOption = document.querySelector('input[name="option"]:checked');
-  let optionSelected = document.querySelectorAll('input[name="option"]');
-
-  optionSelected.forEach((option) => {
-    option.checked = false;
-  });
-
-  if (!selectedOption) {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Please select an option...!",
-    });
-    return;
+function submitQuiz() {
+  const data = mcqsQuestion[index];
+  const ans = getAnswer();
+  if (ans === data.correctAnswer) {
+    correct++;
+  } else {
+    incorrect++;
   }
-  let currentQuestion = mcqsQuestion[questionNumber];
-  if (selectedOption.value === currentQuestion.a) {
-    score += 10;
-  }
-  questionNumber++;
-  if (questionNumber === mcqsQuestion.length) {
-    endQuiz();
-    return;
-  }
-
+  index++;
   loadQuestion();
+  return;
 }
 
-// function endQuiz () {
-//     quizForm.style.display = "none";
-//     myFooter.style.display = "none";
-//     Swal.fire({
-//         title: "Quiz Completed",
-//         text: `Your Score is ${score} out of ${totalQuestions * 10}`,
-//         icon: "success",
-//         confirmButtonText: "Okay",
-//     });
-// }
-
-function endQuiz() {
-    let userScore = 0;
-    let userAnswers = []; // Array to store user's answers
-
-    // Loop through each question and compare user's answer with correct answer
-    for (let i = 0; i < mcqsQuestion.length; i++) {
-        let selectedOption = document.querySelector('input[name="option' + (i+1) + '"]:checked');
-        if (selectedOption) {
-            userAnswers.push(selectedOption.value); // Store user's answer
-            if (selectedOption.value === mcqsQuestion[i].correctAnswer) {
-                userScore++; // Increment score if the answer is correct
-            }
-        }
+function getAnswer() {
+  let ans;
+  allInputs.forEach((inputEl) => {
+    if (inputEl.checked) {
+      ans = inputEl.value;
+      // console.log(inputEl.value);
     }
-
-    // Display pass/fail message and user's score
-    let passOrFailMessage = (userScore >= 7) ? "Congratulations! You passed the quiz!" : "Sorry! You failed the quiz.";
-    let results = "<h2>Quiz Results</h2>";
-    results += "<p><strong>Your Score:</strong> " + userScore + " out of " + mcqsQuestion.length + "</p>";
-    results += "<p><strong>" + passOrFailMessage + "</strong></p>";
-
-    // Display results using a modal or any other method
-    Swal.fire({
-        icon: "info",
-        title: "Quiz Ended",
-        html: results,
-        showCancelButton: false,
-        showConfirmButton: false,
-        allowOutsideClick: false,
-    });
+  });
+  return ans;
 }
 
+function reset() {
+  allInputs.forEach((inputEl) => {
+    inputEl.checked = false;
+  });
+}
+
+const endQuiz = () => {
+  quizForm.style.display = "none";
+  resultDiv.style.display = "block";
+  resultDiv.innerHTML = `<h1>Result</h1>
+  <h1>Total Questions: ${total}</h1>
+  <h1>Correct Answers: ${correct}</h1>
+  <p>Incorrect Answers: ${incorrect}</p>
+  <p>Percentage: ${Math.floor((correct / total) * 100)}%</p>
+  <button class="submit-key" onclick="backToHome()">Back</button>
+  `;
+}

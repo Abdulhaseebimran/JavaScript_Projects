@@ -325,27 +325,32 @@
                 <h5 id="questionGenerate"></h5>
             </div>
                 <div class="options">
-                    <input type="radio" name="option" id="option1" value="option1" class="option">
+                    <input type="radio" name="option" id="option1" value="a" class="option">
                     <label for="option1" id="option1_radio"></label>
                 </div>
                 <div class="options">
-                    <input type="radio" name="option" id="option2" value="option2" class="option">
+                    <input type="radio" name="option" id="option2" value="b" class="option">
                     <label for="option2" id="option2_radio"></label>
                 </div>
                 <div class="options">
-                    <input type="radio" name="option" id="option3" value="option3" class="option">
+                    <input type="radio" name="option" id="option3" value="c" class="option">
                     <label for="option3" id="option3_radio"></label>
                 </div>
                 <div class="options">
-                    <input type="radio" name="option" id="option4" value="option4" class="option">
+                    <input type="radio" name="option" id="option4" value="d" class="option">
                     <label for="option4" id="option4_radio"></label>
                 </div> 
                 <div class="submit submit-form-btn">
-                    <button class="submit-key" id="nextBtn" onclick="nextQuestion()">Next</button>
-                    <button class="submit-key" onclick="endQuiz()">Submit Quiz</button>
+                    <!-- <button class="submit-key" id="nextBtn">Next</button> -->
+                    <button class="submit-key" id="submitBtn" onclick="submitQuiz()">Next</button>
                 </div>
             </div>
     </section>
+
+    <!-- result -->
+    <div class="container-fluid" id="result">
+        <button class="submit-key" onclick="backToHome()">Back</button>
+    </div>
     
     <!-- footer -->
     <footer id="my-footer">
