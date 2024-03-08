@@ -225,11 +225,11 @@ let allInputs = document.querySelectorAll("input[type='radio']");
 
 
 let correct = 0,
-    incorrect = 0,
-    total = mcqsQuestion.length;
+  incorrect = 0,
+  total = mcqsQuestion.length;
 let index = 0;
 function loadQuestion() {
-  if(total === index) {
+  if (total === index) {
     return endQuiz();
   }
   reset();

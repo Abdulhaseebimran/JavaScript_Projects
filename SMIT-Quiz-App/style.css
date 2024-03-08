@@ -16,7 +16,7 @@
   color: #000 !important;
 }
 
-.container-fluid>img {
+.container-fluid > img {
   width: 150px;
   height: 100px;
   padding: 10px;
@@ -36,7 +36,7 @@
   font-size: 18px;
 }
 
-.heading>p {
+.heading > p {
   font-size: 16px;
   font-weight: 600;
   color: #000;
@@ -153,7 +153,8 @@
   justify-content: center;
 }
 
-.back, .submit-key {
+.back,
+.submit-key {
   padding: 5px 20px;
   background-color: #007bff;
   border: none;
@@ -164,7 +165,8 @@
   border-radius: 5px;
 }
 
-.back:hover, .submit-key:hover {
+.back:hover,
+.submit-key:hover {
   background-color: red;
   transition: all 0.3s ease-in-out;
 }
@@ -206,12 +208,12 @@
   padding: 10px;
 }
 
-.submit{
+.submit {
   margin: 5px;
 }
 
 /* quiz form */
-#quizes{
+#quizes {
   width: 100%;
   display: flex;
   align-items: center;
@@ -221,7 +223,7 @@
   margin-bottom: 50px;
 }
 
-.quiz-form{
+.quiz-form {
   width: 700px;
   display: flex;
   justify-content: center;
@@ -234,7 +236,7 @@
   flex-wrap: wrap;
 }
 
-.quiz-title{
+.quiz-title {
   width: 100%;
   text-align: center;
   font-size: 20px;
@@ -242,46 +244,45 @@
   text-shadow: 1px 1px 1px #000;
 }
 
-.question{
+.question {
   width: 100%;
   display: flex;
   align-items: center;
 }
 
-#questionGenerate{
+#questionGenerate {
   padding: 20px;
   font-size: 22px;
   font-weight: 600;
   color: #000;
 }
 
-.options{
+.options {
   width: 100%;
   padding-left: 20px;
 }
 
-.option{
+.option {
   padding: 15px;
   font-size: 16px;
   font-weight: 600;
   color: #000;
-
 }
 
-.options > label{
+.options > label {
   font-size: 20px;
   font-weight: 600;
   color: #000;
   margin: 10px;
 }
 
-.submit-form-btn{
+.submit-form-btn {
   padding: 10px 20px;
   margin: 30px;
 }
 
 /* result section */
-#result{
+#result {
   width: 100%;
   display: flex;
   align-items: center;
@@ -342,41 +343,43 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
-    .back, .submit-key{
-      margin-top: 10px;
-    }
-    .course-join{
-      width: 100% !important;
-      margin: 0;
-    }
-    .course-join-1{
-       padding: 0;
-    }
-    .join-1 > h5, h6{
-      padding: 10px;
-      font-size: 17px;
-    }
-    .course{
-      text-align: center;
-      height: 50px;
-    }
-    .courseList{
-      margin-top: 14px;
-    }
-    .back-btn{
-      margin: 5px;
-    }
-    .options > label{
-      font-size: 18px;
-      margin: 5px;
-      line-clamp: 2;
-    }
-    #questionGenerate{
-      padding: 10px;
-      font-size: 18px;
-    }
-    .question{
-      padding: 5px;
-      top: 10px;
-    }
+  .back,
+  .submit-key {
+    margin-top: 10px;
+  }
+  .course-join {
+    width: 100% !important;
+    margin: 0;
+  }
+  .course-join-1 {
+    padding: 0;
+  }
+  .join-1 > h5,
+  h6 {
+    padding: 10px;
+    font-size: 17px;
+  }
+  .course {
+    text-align: center;
+    height: 50px;
+  }
+  .courseList {
+    margin-top: 14px;
+  }
+  .back-btn {
+    margin: 5px;
+  }
+  .options > label {
+    font-size: 18px;
+    margin: 5px;
+    line-clamp: 2;
+  }
+  #questionGenerate {
+    padding: 10px;
+    font-size: 18px;
+  }
+  .question {
+    padding: 5px;
+    top: 10px;
+  }
 }
