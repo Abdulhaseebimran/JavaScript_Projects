@@ -16,10 +16,11 @@
   color: #000 !important;
 }
 
-.container-fluid > img {
+.container-fluid>img {
   width: 150px;
   height: 100px;
   padding: 10px;
+  cursor: pointer;
 }
 
 .btn-login {
@@ -36,7 +37,7 @@
   font-size: 18px;
 }
 
-.heading > p {
+.heading>p {
   font-size: 16px;
   font-weight: 600;
   color: #000;
@@ -100,10 +101,6 @@
   width: 100%;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap; */
   padding: 20px 0px;
 }
 
@@ -234,6 +231,7 @@
   padding: 20px;
   border-radius: 10px;
   flex-wrap: wrap;
+  margin-bottom: 100px;
 }
 
 .quiz-title {
@@ -257,6 +255,21 @@
   color: #000;
 }
 
+.time>p,
+.time>span {
+  display: inline-block;
+  margin-right: 10px;
+  color: #007bff;
+  font-size: 20px;
+  font-weight: 500;
+  right: 5px;
+  margin-bottom: 20px;
+}
+
+.time {
+  text-align: end;
+}
+
 .options {
   width: 100%;
   padding-left: 20px;
@@ -269,7 +282,7 @@
   color: #000;
 }
 
-.options > label {
+.options>label {
   font-size: 20px;
   font-weight: 600;
   color: #000;
@@ -282,36 +295,67 @@
 }
 
 /* result section */
-#result {
+#result>div {
+  border-bottom: 1px solid rgb(187, 187, 187);
+  padding: 20px 5px;
   width: 100%;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin: 30px 0px;
-  display: none;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: white;
-  border: none;
-  text-align: center;
-}
-
-#result h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-#result p {
-  font-size: 20px;
-  margin-bottom: 10px;
   font-weight: 600;
+  color: #0D6DB7;
 }
 
-#result h2 {
-  font-size: 18px;
-  margin-bottom: 5px;
+#result span {
+  font-size: 30px;
+  margin-left: 10px;
+}
+
+.passedText {
+  color: #20831e !important;
+  font-size: 30px !important;
+}
+
+.failedText {
+  color: red !important;
+  font-size: 30px !important;
+}
+
+.scoreArea {
+  display: none;
+}
+
+#result {
+  margin: 0 auto;
+  margin-bottom: 100px;
+  margin-top: 20px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 500px;
+  flex-wrap: wrap;
+}
+
+#result h3 {
+  margin-top: 30px;
+  margin-left: 110px;
+  padding: 30px 40px;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  color: #20831e;
+  border: 14px solid #20831e;
+  font-size: 80px;
+}
+
+.failedScore {
+  color: red !important;
+  border: 14px solid red !important;
 }
 
 /* footer */
@@ -343,43 +387,91 @@ footer {
 }
 
 @media screen and (max-width: 600px) {
+
   .back,
   .submit-key {
     margin-top: 10px;
   }
+
   .course-join {
     width: 100% !important;
     margin: 0;
   }
+
   .course-join-1 {
     padding: 0;
   }
-  .join-1 > h5,
+
+  .join-1>h5,
   h6 {
     padding: 10px;
     font-size: 17px;
   }
+
   .course {
     text-align: center;
     height: 50px;
   }
+
   .courseList {
     margin-top: 14px;
   }
+
   .back-btn {
     margin: 5px;
   }
-  .options > label {
+
+  .options>label {
     font-size: 18px;
     margin: 5px;
     line-clamp: 2;
   }
+
   #questionGenerate {
     padding: 10px;
     font-size: 18px;
   }
+
   .question {
     padding: 5px;
     top: 10px;
+  }
+
+  #result {
+    width: 100%;
+  }
+
+  #result h3 {
+    padding: 20px 30px;
+    width: 200px;
+    height: 200px;
+    font-size: 60px;
+    border: 8px solid #20831e;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #result h3 {
+    padding: 20px 30px;
+    width: 150px;
+    height: 150px;
+    font-size: 50px;
+    border: 8px solid #20831e;
+    text-align: center;
+    margin-left: 50px;
+  }
+
+  .passedText {
+    font-size: 20px !important;
+    padding: 0 10px;
+  }
+
+  #result span {
+    font-size: 20px;
+  }
+
+  #result>div {
+    padding: 10px 5px;
   }
 }

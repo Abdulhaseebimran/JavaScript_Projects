@@ -2,85 +2,85 @@
 
 let mcqsQuestion = [
   {
-    "question": "What does CSS stand for?",
-    "a": "Creative Style Sheets",
-    "b": "Cascading Style Sheets",
-    "c": "Computer Style Sheets",
-    "d": "Colorful Style Sheets",
-    "correctAnswer": "b",
+    question: "What does CSS stand for?",
+    a: "Creative Style Sheets",
+    b: "Cascading Style Sheets",
+    c: "Computer Style Sheets",
+    d: "Colorful Style Sheets",
+    correctAnswer: "b",
   },
   {
-    "question": "Which HTML tag is used to define an unordered list?",
-    "a": "<list>",
-    "b": "<ul>",
-    "c": "<ol>",
-    "d": "<li></li>",
-    "correctAnswer": "b",
+    question: "Which HTML tag is used to define an unordered list?",
+    a: "<list>",
+    b: "<ul>",
+    c: "<ol>",
+    d: "<li></li>",
+    correctAnswer: "b",
   },
   {
-    "question": "Which of the following is NOT a valid JavaScript data type?",
-    "a": "string",
-    "b": "boolean",
-    "c": "character",
-    "d": "number",
-    "correctAnswer": "c",
+    question: "Which of the following is NOT a valid JavaScript data type?",
+    a: "string",
+    b: "boolean",
+    c: "character",
+    d: "number",
+    correctAnswer: "c",
   },
   {
-    "question": "What does the 'href' attribute in the anchor tag (<a>) specify?",
-    "a": "The height of the link",
-    "b": "The color of the link",
-    "c": "The destination URL of the link",
-    "d": "The font family of the link",
-    "correctAnswer": "c",
+    question: "What does the 'href' attribute in the anchor tag (<a>) specify?",
+    a: "The height of the link",
+    b: "The color of the link",
+    c: "The destination URL of the link",
+    d: "The font family of the link",
+    correctAnswer: "c",
   },
   {
-    "question": "In JavaScript, which keyword is used to declare a variable?",
-    "a": "var",
-    "b": "let",
-    "c": "const",
-    "d": "set",
-    "correctAnswer": "a",
+    question: "In JavaScript, which keyword is used to declare a variable?",
+    a: "var",
+    b: "let",
+    c: "const",
+    d: "set",
+    correctAnswer: "a",
   },
   {
-    "question": "Which CSS property is used to change the color of text?",
-    "a": "text-color",
-    "b": "color",
-    "c": "font-color",
-    "d": "text-style",
-    "correctAnswer": "b",
+    question: "Which CSS property is used to change the color of text?",
+    a: "text-color",
+    b: "color",
+    c: "font-color",
+    d: "text-style",
+    correctAnswer: "b",
   },
   {
-    "question": "What does the HTML <canvas> element provide?",
-    "a": "A container for graphics",
-    "b": "A container for text",
-    "c": "A container for audio",
-    "d": "A container for video",
-    "correctAnswer": "a",
+    question: "What does the HTML <canvas> element provide?",
+    a: "A container for graphics",
+    b: "A container for text",
+    c: "A container for audio",
+    d: "A container for video",
+    correctAnswer: "a",
   },
   {
-    "question":
+    question:
       "Which method is used to add a new element to the end of an array in JavaScript?",
-    "a": "append()",
-    "b": "push()",
-    "c": "add()",
-    "d": "insert()",
-    "correctAnswer": "b",
+    a: "append()",
+    b: "push()",
+    c: "add()",
+    d: "insert()",
+    correctAnswer: "b",
   },
   {
-    "question": "What is the purpose of the CSS property 'float'?",
-    "a": "To align text within a block",
-    "b": "To clear floated elements",
-    "c": "To position an element to the right or left of its container",
-    "d": "To set the opacity of an element",
-    "correctAnswer": "c",
+    question: "What is the purpose of the CSS property 'float'?",
+    a: "To align text within a block",
+    b: "To clear floated elements",
+    c: "To position an element to the right or left of its container",
+    d: "To set the opacity of an element",
+    correctAnswer: "c",
   },
   {
-    "question": "What does the JavaScript function 'querySelector()' do?",
-    "a": "It selects the first element that matches a specified CSS selector",
-    "b": "It selects all elements that match a specified CSS selector",
-    "c": "It selects the last element that matches a specified CSS selector",
-    "d": "It selects elements based on their IDs",
-    "correctAnswer": "a",
+    question: "What does the JavaScript function 'querySelector()' do?",
+    a: "It selects the first element that matches a specified CSS selector",
+    b: "It selects all elements that match a specified CSS selector",
+    c: "It selects the last element that matches a specified CSS selector",
+    d: "It selects elements based on their IDs",
+    correctAnswer: "a",
   },
 ];
 
@@ -177,6 +177,7 @@ function startQuiz() {
     quizForm.style.display = "flex";
     myFooter.style.display = "block";
     // navBar.style.display = "block";
+    startTimer();
     Swal.fire({
       position: "top-center",
       icon: "success",
@@ -212,6 +213,7 @@ function key() {
   courseList9.style.display = "none";
   myFooter.style.position = "fixed";
   myFooter.style.bottom = 0;
+  resultDiv.style.display = "none";
 }
 
 let questionGenerate = document.getElementById("questionGenerate");
@@ -222,7 +224,6 @@ let option4 = document.getElementById("option4_radio");
 let nextBtn = document.querySelector("#nextBtn");
 let submitBtn = document.querySelector("#submitBtn");
 let allInputs = document.querySelectorAll("input[type='radio']");
-
 
 let correct = 0,
   incorrect = 0,
@@ -276,12 +277,73 @@ function reset() {
 
 const endQuiz = () => {
   quizForm.style.display = "none";
+  myFooter.style.display = "none";
+
+  const finalScore = (correct / mcqsQuestion.length) * 100;
+
+  const resultDiv = document.getElementById("result");
+  if (!resultDiv) {
+    console.error("Result container element (result) not found");
+    return;
+  }
   resultDiv.style.display = "block";
-  resultDiv.innerHTML = `<h1>Result</h1>
-  <h1>Total Questions: ${total}</h1>
-  <h1>Correct Answers: ${correct}</h1>
-  <p>Incorrect Answers: ${incorrect}</p>
-  <p>Percentage: ${Math.floor((correct / total) * 100)}%</p>
-  <button class="submit-key" onclick="backToHome()">Back</button>
-  `;
+
+  let resultContent = "";
+  if (finalScore < 60) {
+    resultContent = `
+      <div>
+        <p class="failedText">You Are Failed! &#128542;</p>
+      </div>
+      <div>
+        <p>Total Questions</p>
+        <p>${mcqsQuestion.length}</p>
+      </div>
+      <div>
+        <p>Correct Questions</p>
+        <p>${correct}</p>
+      </div>
+      <h3 id="scorePercentage" class="failedScore">${finalScore} <span>%</span></h3>
+    `;
+  } else {
+    resultContent = `
+      <div>
+        <p class="passedText">Congratulations, you passed! &#128522;</p>
+      </div>
+      <div>
+        <p>Total Questions</p>
+        <p>${mcqsQuestion.length}</p>
+      </div>
+      <div>
+        <p>Correct Questions</p>
+        <p>${correct}</p>
+      </div>
+      <h3 id="scorePercentage">${finalScore} <span>%</span></h3>
+    `;
+  }
+  resultDiv.innerHTML = resultContent;
+};
+
+let timeLeft = 60;
+let timerDisplay = document.getElementById("timer");
+function startTimer() {
+  timerDisplay.textContent = TimeFormat(timeLeft);
+  timerInterval = setInterval(() => {
+    timeLeft--;
+
+    if (timeLeft < 0) {
+      timeLeft = 0;
+    }
+
+    timerDisplay.textContent = TimeFormat(timeLeft);
+
+    if (timeLeft === 0) {
+      endQuiz();
+    }
+  }, 1000);
+}
+
+function TimeFormat(seconds) {
+  const minutes = Math.floor(seconds / 60);
+  const remainingSeconds = seconds % 60;
+  return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
 }

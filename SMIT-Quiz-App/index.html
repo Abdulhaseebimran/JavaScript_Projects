@@ -14,7 +14,7 @@
 <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
-            <img src="./images/smit-logo.png" alt="smit logo" />
+            <img src="./images/smit-logo.png" alt="smit logo" onclick="backToHome()"/>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,7 +27,7 @@
     <!-- greeting for users -->
     <div class="heading">
         <h1>Hello, Everyone👋</h1>
-        <p>Welcome to the SMIT quiz portal. Please choose your course below to begin the quiz."</p>
+        <p>Welcome to the SMIT quiz portal. Please choose your course below to begin the quiz.</p>
     </div>
     <!-- card show -->
     <div class="container-fluid" id="course-cards">
@@ -311,6 +311,9 @@
         <div class="quiz-form" id="quizForm">
             <div class="quiz-title">
                 <h2>Quiz</h2>
+                <div class="time">
+                    <p>Time Left </p><span id="timer"></span>
+                </div>
             </div>
             <div class="question">
                 <h5 id="questionGenerate"></h5>
@@ -338,9 +341,7 @@
         </div>
     </section>
 
-    <!-- result -->
-    <div class="container-fluid" id="result">
-        <button class="submit-key" onclick="backToHome()">Back</button>
+    <div id="result" class="scoreArea">
     </div>
 
     <!-- footer -->
