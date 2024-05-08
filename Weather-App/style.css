@@ -20,10 +20,10 @@ body {
   position: relative;
   width: 440px;
   height: 550px;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(20px);
   border: 2px solid rgba(255, 255, 255, 0.2);
-  background: rgba(255, 255, 255, 0.1);
-  background-color: rgb(91, 152, 223);
+  background: rgba(133, 133, 133, 0.1);
+  /* background-color: rgb(91, 152, 223); */
   border-radius: 16px;
   padding: 20px;
   color: white;
