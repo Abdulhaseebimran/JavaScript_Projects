@@ -376,6 +376,76 @@ footer {
   width: 100%;
 }
 
+/* login and sign up */
+
+.sign-up, .login{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  text-align: center;
+  min-height: 90vh;
+  width: auto;
+  display: none;
+}
+
+.sign-up-form p {
+  font-size: 1.2em;
+  font-family: bold;
+  padding: 10px 10px;
+  font-weight: 600;
+}
+
+.sign-up-form p > a{
+  color: #285192;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.2em;
+}
+
+.sign-up-form h2,
+.login h2{
+  font-size: 2em;
+  font-family: bold;
+  padding: 10px 10px;
+  font-weight: 600;
+}
+.login input,
+.sign-up input{
+  background-color: #fdfdfdd9;
+  font-size: 1em;
+  outline: none;
+  padding: 1em;
+  margin: 0.6em 0;
+  width: 21em;
+  border-radius: 3px;
+  border: 1px solid #524f4f33;
+}
+.login input:hover,
+.sign-up input:hover{
+  box-shadow: 0 0 0 2px #285192;
+  transition: all 2s ease-out;
+}
+.login button,
+.sign-up button{
+  background-color: #285192;
+  color: #fff;
+  font-size: 1.1em;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  padding: 1em;
+  width: 18em;
+  margin: 1em 0;
+}
+
+.login button:hover,
+.sign-up button:hover {
+  background-color: red;
+  transition: all 0.5s ease-out;
+}
+
 @media screen and (max-width: 900px) {
   .btn-login {
     display: flex;

@@ -100,34 +100,48 @@ let backToMain = document.getElementById("backs");
 let myFooter = document.getElementById("my-footer");
 let quizForm = document.getElementById("quizes");
 let resultDiv = document.getElementById("result");
+let topHeading = document.querySelector(".heading");
+let navBar = document.querySelector(".navbar");
+
 function JoinCourse() {
   courseCards.style.display = "none";
   courseList.style.display = "block";
   keySctions.style.display = "none";
+  login.style.display = "none";
+  signup.style.display = "none";
+  topHeading.style.display = "block";
 }
 
 function JoinCourse2() {
   courseCards.style.display = "none";
   courseList2.style.display = "block";
   keySctions.style.display = "none";
+  login.style.display = "none";
+  signup.style.display = "none";
 }
 
 function JoinCourse3() {
   courseCards.style.display = "none";
   courseList3.style.display = "block";
   keySctions.style.display = "none";
+  login.style.display = "none";
+  signup.style.display = "none";
 }
 
 function JoinCourse4() {
   courseCards.style.display = "none";
   courseList4.style.display = "block";
   keySctions.style.display = "none";
+  login.style.display = "none";
+  signup.style.display = "none";
 }
 
 function JoinCourse5() {
   courseCards.style.display = "none";
   courseList5.style.display = "block";
   keySctions.style.display = "none";
+  login.style.display = "none";
+  signup.style.display = "none";
 }
 function JoinCourse6() {
   courseCards.style.display = "none";
@@ -166,11 +180,11 @@ function backToHome() {
   courseList9.style.display = "none";
   keySctions.style.display = "none";
   resultDiv.style.display = "none";
+  login.style.display = "none";
+  signup.style.display = "none";
 }
 
 function startQuiz() {
-  let topHeading = document.querySelector(".heading");
-  let navBar = document.querySelector(".navbar");
   if (inputPassowrd.value === "haseeb") {
     keySctions.style.display = "none";
     topHeading.style.display = "none";
@@ -214,6 +228,8 @@ function key() {
   myFooter.style.position = "fixed";
   myFooter.style.bottom = 0;
   resultDiv.style.display = "none";
+  login.style.display = "none";
+  signup.style.display = "none";
 }
 
 let questionGenerate = document.getElementById("questionGenerate");
@@ -347,3 +363,84 @@ function TimeFormat(seconds) {
   const remainingSeconds = seconds % 60;
   return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
 }
+
+const signup = document.querySelector(".sign-up");
+const login = document.querySelector(".login");
+
+function signupForm(e) {
+  e.preventDefault();
+  let signupName = document.getElementById("signupName").value;
+  let signupEmail = document.getElementById("signupEmail").value;
+  let signupPassword = document.getElementById("signupPassword").value;
+
+  if (signupName === "" || signupEmail === "" || signupPassword === "") {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Please fill in all the fields!",
+    });
+    return;
+  }
+
+  localStorage.setItem(
+    "User",
+    JSON.stringify({
+      name: signupName,
+      email: signupEmail,
+      password: signupPassword,
+    })
+  );
+
+  Swal.fire({
+    position: "top-center",
+    icon: "success",
+    title: "Signup Successfully",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+
+  signup.style.display = "none";
+  login.style.display = "block";
+}
+
+function loginForm(e) {
+  e.preventDefault();
+  let loginEmail = document.getElementById("loginEmail").value;
+  let loginPassword = document.getElementById("loginPassword").value;
+  let user = JSON.parse(localStorage.getItem("User"));
+
+  if (!user || loginEmail !== user.email || loginPassword !== user.password) {
+    Swal.fire({
+      icon: "error",
+      title: "Oops...",
+      text: "Please enter correct Email and Password!",
+    });
+    return;
+  }
+
+  Swal.fire({
+    position: "top-center",
+    icon: "success",
+    title: "Login Successfully",
+    showConfirmButton: false,
+    timer: 1500,
+  });
+
+  courseCards.style.display = "block";
+  login.style.display = "none";
+}
+
+function showSignupForm() {
+  signup.style.display = "block";
+  login.style.display = "none";
+}
+
+function showLoginForm() {
+  login.style.display = "block";
+  signup.style.display = "none";
+}
+
+document.getElementById("openSignupForm").addEventListener("click", showSignupForm);
+document.getElementById("openLoginForm").addEventListener("click", showLoginForm);
+document.getElementById("signupBtn").addEventListener("click", signupForm);
+document.getElementById("loginBtn").addEventListener("click", loginForm);

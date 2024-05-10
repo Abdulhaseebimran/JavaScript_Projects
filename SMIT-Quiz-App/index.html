@@ -12,18 +12,44 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
         <div class="container-fluid">
-            <img src="./images/smit-logo.png" alt="smit logo" onclick="backToHome()"/>
+            <img src="./images/smit-logo.png" alt="smit logo" onclick="backToHome()" />
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse btn-login" id="navbarText">
-                <button type="button" class="btn btn-outline-primary">Login</button>
-                <button type="button" class="btn btn-outline-success">Sign Up</button>
+                <button type="button" class="btn btn-outline-primary" id="openLoginForm">Login</button>
+                <button type="button" class="btn btn-outline-success" id="openSignupForm">Sign Up</button>
             </div>
     </nav>
+    <!-- login and sign up -->
+    <section class="sign-up" style="display: none;">
+        <img src="./images/smit-logo.png" alt="">
+        <div class="sign-up-form">
+            <h2>Sign Up</h2>
+            <form>
+                <input type="text" id="signupName" placeholder="Name" /><br />
+                <input type="email" id="signupEmail" placeholder="Email" /><br />
+                <input type="password" id="signupPassword" placeholder="Password" /><br />
+                <button id="signupBtn">Sign Up</button>
+                <p>Already have an account? <a href="#" id="openLoginForm">Login</a></p>
+            </form>
+        </div>
+    </section>
+    <!-- login form -->
+    <section class="login" style="display: none;">
+        <img src="./images/smit-logo.png" alt="">
+        <div class="login-form">
+            <h2>Login</h2>
+            <form>
+                <input type="email" id="loginEmail" placeholder="Email" /><br />
+                <input type="password" id="loginPassword" placeholder="Password" /><br />
+                <button id="loginBtn">Login</button>
+            </form>
+        </div>
+    </section>
     <!-- greeting for users -->
     <div class="heading">
         <h1>Hello, Everyone👋</h1>
