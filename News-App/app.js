@@ -3,6 +3,7 @@
 const searchBtn = document.getElementById("search-btn");
 const newsContainer = document.getElementById("newsContainer");
 const searchNews = document.getElementById("searchNews");
+const navLinks = document.getElementById("navbar");
 
 
 const fetchAndDisplayNews = (query) => {
@@ -42,7 +43,7 @@ const displayNewsCards = (newsArray) => {
     const truncateTitle =
       title.length > 50 ? `${title.substring(0, 50)}...` : title;
 
-    newsContainer.innerHTML += `0
+    newsContainer.innerHTML += `
     <div class="card position-relative">
     <img src="${image}" class="card-img-top" alt="${truncateTitle}">
     <div class="card-body">
