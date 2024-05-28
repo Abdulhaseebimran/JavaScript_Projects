@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Code Edit | Coders Cave Internship</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <h1>Online Code Editor</h1>
+        </div>
+    </header>
+    <div class="code-editor">
+        <div class="code">
+            <h1><img src="./image/html.png" alt="">HTML</h1>
+            <textarea class="html-code" onkeyup="runEditor()"></textarea>
+
+            <h1><img src="./image/css.png" alt="">CSS</h1>
+            <textarea class="css-code"  onkeyup="runEditor()"></textarea>
+
+            <h1><img src="./image/js.png" alt="">JS</h1>
+            <textarea spellcheck="false" class="js-code"  onkeyup="runEditor()"></textarea>
+        </div>
+        <div class="result-code">
+            <h1 class="result-heading"> <i class="fa-regular fa-circle-play"></i> RESULT</h1>
+            <iframe id="result"></iframe>
+        </div>
+    </div>
+    <footer>
+        <div>
+            <div class="footer">
+                <h1>Online Code Editor</h1>
+                <p>Created by <a href="https://www.LinkedIn.com/Abdul Haseeb/">Abdul Haseeb</a></p>
+                
+            </div>
+        </div>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>

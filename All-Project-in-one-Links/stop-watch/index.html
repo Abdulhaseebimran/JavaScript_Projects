@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop watch Timer - JS</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/14fb7fbf46.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <div class="main">
+      <h1>Stopwatch & Timer App</h1>
+      <div class="container">
+        <div class="timer-container">
+          <h3><i class="fa-solid fa-hourglass"></i> Timer</h3>
+          <div class="timer">
+            <div class="time" id="timer-display">
+              <span>5</span><sub>m</sub> <span class="time-zero">00</span>
+            </div>
+          </div>
+          <button id="start-timer-btn">Start</button>
+          <button id="reset-timer-btn">Reset</button>
+        </div>
+        <div class="stopwatch-container">
+          <h3><i class="fa-regular fa-clock"></i> Stopwatch</h3>
+          <div class="stopwatch">
+            <div class="time" id="stopwatch-display">
+              <span id="stopwatch-hours">00</span><sub>h</sub>
+              <span id="stopwatch-minutes">0</span><sub>m</sub>
+              <span id="stopwatch-seconds">00</span><sub>s</sub>
+              <span class="time-zero" id="stopwatch-milliseconds">00</span>
+            </div>
+          </div>
+          <button id="start-stopwatch-btn">Start</button>
+          <button id="reset-stopwatch-btn">Reset</button>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>
+        All right resvered by
+        <a href="https://github.com/Abdulhaseebimran" target="_blank"> Abdul Haseeb Imran </a>
+      </p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

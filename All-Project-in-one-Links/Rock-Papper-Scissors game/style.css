@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1{
+    background-color: #081b31;
+    color: white;
+    height: 5rem;
+    line-height: 5rem;
+    text-align: center;
+}
+
+.choice {
+    height: 165px;
+    width: 165px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img{
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.choices{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 5rem;
+}
+
+.choice:hover{
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    opacity: 0.6;
+    background-color: #081b31;
+}
+
+.score-board{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 3rem;
+    font-size: 2rem;
+}
+
+#userScore, #computerScore{
+    font-size: 4rem;
+    text-align: center;
+}
+
+.msg-container{
+    margin-top: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#msg{
+   background-color: #081b31;
+   color: white;
+   text-align: center;
+   font-size: 2rem;
+   margin-top: 3rem;
+   display: inline;
+   padding: 1rem;
+   border-radius: 1rem;
+}
+
+@media (max-width: 768px){
+    .choices{
+        flex-direction: column;
+    }
+    img{
+        height: 100px;
+        width: 100px;
+    }
+    .choice{
+        height: 100px;
+        width: 100px;
+    }
+    .msg{
+        font-size: 1rem;
+    }
+    .msg-container{
+        margin-top: 1rem;
+        width: 100%;
+    }
+}
+
+@media (max-width: 350px){
+    .choices{
+        flex-direction: column;
+    }
+    img{
+        height: 80px;
+        width: 80px;
+    }
+    .choice{
+        height: 80px;
+        width: 80px;
+    }
+    .msg{
+        font-size: 1rem;
+    }
+    .msg-container > p{
+        font-size: 0.8rem;
+    }
+    .msg-container{
+        margin-top: 1rem;
+        width: 100%;
+    }
+    h1{
+        font-size: 1.5rem;
+        width: 100%;
+    }
+}

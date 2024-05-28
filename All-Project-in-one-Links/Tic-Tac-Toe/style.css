@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* background-image: url('./images/tic.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: #FBAB7E;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #191913;
+}
+
+.container {
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game {
+    height: 60vmin;
+    width: 60vmin;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5vmin;
+}
+
+.box {
+    height: 18vmin;
+    width: 18vmin;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.4);
+    font-size: 8vmin;
+    color: #b0413e;
+    background-color: #ffffc7;
+}
+
+#reset-game {
+    padding: 1rem;
+    font-size: 1.25rem;
+    border: none;
+    border-radius: 1rem;
+    background-color: #191913;
+    color: white;
+    cursor: pointer;
+    outline: none;
+}
+
+#reset-game:hover {
+    background-color: #b0413e;
+    transition: all 0.3s ease-in-out;
+}
+
+.msg-container {
+    height: 20vmin;
+    font-size: 2rem;
+    color: #191913;
+}
+
+.msg {
+    color: #b0413e;
+    font-size: 8vmin;
+}
+
+.msg-container>.new-game {
+    margin: 0.3rem;
+}
+
+.msg-container > .new-game:hover {
+    background-color: #b0413e;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.hide {
+    display: none;
+}
+
+
+@media (max-width: 400px){
+    .container{
+        height: 40vh;
+    }
+    .game {
+        height: 50vmin;
+        width: 50vmin;
+    }
+    .box {
+        height: 15vmin;
+        width: 15vmin;
+        font-size: 6vmin;
+    }
+    .msg-container {
+        height: 15vmin;
+        font-size: 1.5rem;
+        margin: 0.5rem;
+    }
+    .msg {
+        font-size: 6vmin;
+        padding: 0.5rem;
+    }
+    #reset-game {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+    h1 {
+        font-size: 1.5rem;
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .msg{
+        font-size: 5vmin;
+    }
+}

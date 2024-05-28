@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    color: white;
+    background-color: #0093E9;
+    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.code-editor{
+    height: 100vh;
+    width: 100%;
+    font-size: 1.2rem;
+    display: flex;
+}
+
+.code,.result-code{
+    flex-basis: 50%;
+    padding: 10px;
+}
+
+.header{
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #1292e8 40%, #2a32d5 100%);
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    padding: 10px;
+    height: 50%;
+}
+
+textarea{
+    height: 28%;
+    width: 100%;
+    background: #1f1f1f;
+    color: #fff;
+    padding: 10px 20px;
+    border: 0;
+    outline: 0;
+    font-size: 20px;
+}
+
+.code-editor .code h1>img{
+    height: 30px;
+    width: 30px;
+    margin-right: 10px;
+
+}
+
+.code-editor .result-code iframe{
+    width: 100%;
+    height: 80%;
+    background-color: white;
+    outline: 0;
+    border: 0;
+}
+
+.code-editor .result-code .result-heading i{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.code-editor .result-code .result-heading{
+    display: flex;
+    align-items:center;
+}
+
+.footer{
+    background-color: #8BC6EC;
+    background-image: linear-gradient(135deg, #1292e8 40%, #2a32d5 100%);
+    text-align: center;
+    color: white;
+    margin-top: 30px;
+    padding: 10px;
+    height: 50%;
+}
+
+.footer p a{
+    margin-bottom: 10px;
+    text-decoration: none;
+    color: white;
+    margin-top: 10px;
+}
