@@ -20,6 +20,14 @@ nav {
   background-color: #eee;
 }
 
+nav .logo {
+  margin-right: auto;
+  font-size: 1.5rem; 
+  font-weight: bold;
+  padding: 0.5rem;
+  color: #1b1b1b;
+}
+
 nav a {
   display: inline-block;
   min-width: 9rem;
@@ -40,6 +48,35 @@ nav a:hover {
   background-color: #982f2f;
   color: #fff;
   transition: all 0.3s ease-in-out;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  font-size: 1.5rem; 
+  font-weight: bold;
+  color: #ffa500; 
+  margin-right: auto; 
+}
+
+.logo-bracket {
+  color: #4a4a4a; 
+  font-weight: bold;
+}
+
+.logo a {
+  color: #ffa500; 
+  text-decoration: none;
+}
+
+.logo a.active {
+  color: #ffa500; 
+}
+
+.logo a[aria-current="page"] {
+  background-color: transparent;
+  border: none; 
 }
 
 main {
