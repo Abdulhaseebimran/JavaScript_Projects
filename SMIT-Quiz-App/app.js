@@ -107,25 +107,22 @@ function JoinCourse() {
   courseCards.style.display = "none";
   courseList.style.display = "block";
   keySctions.style.display = "none";
-  login.style.display = "none";
-  signup.style.display = "none";
   topHeading.style.display = "block";
+  mainPage.style.display = "none";
 }
 
 function JoinCourse2() {
   courseCards.style.display = "none";
   courseList2.style.display = "block";
   keySctions.style.display = "none";
-  login.style.display = "none";
-  signup.style.display = "none";
+  mainPage.style.display = "none";
 }
 
 function JoinCourse3() {
   courseCards.style.display = "none";
   courseList3.style.display = "block";
   keySctions.style.display = "none";
-  login.style.display = "none";
-  signup.style.display = "none";
+  mainPage.style.display = "none";
 }
 
 function JoinCourse4() {
@@ -134,41 +131,48 @@ function JoinCourse4() {
   keySctions.style.display = "none";
   login.style.display = "none";
   signup.style.display = "none";
+  mainPage.style.display = "none";
 }
 
 function JoinCourse5() {
   courseCards.style.display = "none";
   courseList5.style.display = "block";
   keySctions.style.display = "none";
-  login.style.display = "none";
-  signup.style.display = "none";
+  mainPage.style.display = "none";
 }
+
 function JoinCourse6() {
   courseCards.style.display = "none";
   courseList6.style.display = "block";
   keySctions.style.display = "none";
+  mainPage.style.display = "none";
 }
 
 function JoinCourse7() {
   courseCards.style.display = "none";
   courseList7.style.display = "block";
   keySctions.style.display = "none";
+  mainPage.style.display = "none";
 }
 
 function JoinCourse8() {
   courseCards.style.display = "none";
   courseList8.style.display = "block";
   keySctions.style.display = "none";
+  mainPage.style.display = "none";
 }
+
 function JoinCourse9() {
   courseCards.style.display = "none";
   courseList9.style.display = "block";
   keySctions.style.display = "none";
+  mainPage.style.display = "none";
 }
 
 function backToHome() {
   courseCards.style.display = "block";
-  // console.log(courseCards.style.display);
+  topHeading.style.display = "block";
+  myFooter.style.display = "block";
   courseList.style.display = "none";
   courseList2.style.display = "none";
   courseList3.style.display = "none";
@@ -180,8 +184,11 @@ function backToHome() {
   courseList9.style.display = "none";
   keySctions.style.display = "none";
   resultDiv.style.display = "none";
-  login.style.display = "none";
-  signup.style.display = "none";
+  loginUI.style.display = "none";
+  registerUI.style.display = "none";
+  quizForm.style.display = "none";
+  mainPage.style.display = "none";
+  resultDiv.style.display = "none";
 }
 
 function startQuiz() {
@@ -228,8 +235,9 @@ function key() {
   myFooter.style.position = "fixed";
   myFooter.style.bottom = 0;
   resultDiv.style.display = "none";
-  login.style.display = "none";
-  signup.style.display = "none";
+  loginUI.style.display = "none";
+  registerUI.style.display = "none";
+  mainPage.style.display = "none";
 }
 
 let questionGenerate = document.getElementById("questionGenerate");
@@ -364,83 +372,297 @@ function TimeFormat(seconds) {
   return `${minutes}:${remainingSeconds < 10 ? "0" : ""}${remainingSeconds}`;
 }
 
-const signup = document.querySelector(".sign-up");
-const login = document.querySelector(".login");
+const loginName = document.getElementById("loginName");
+const loginPass = document.getElementById("loginPassword");
+const version = document.getElementById("version");
+const clientName = document.getElementById("clientName");
 
-function signupForm(e) {
-  e.preventDefault();
-  let signupName = document.getElementById("signupName").value;
-  let signupEmail = document.getElementById("signupEmail").value;
-  let signupPassword = document.getElementById("signupPassword").value;
+// Function to display registration form
+const loginUI = document.querySelector(".login-wrapper");
+const loginEmailInput = document.querySelector(".loginEmailInput");
+const loginPasswordInput = document.querySelector(".loginPasswordInput");
 
-  if (signupName === "" || signupEmail === "" || signupPassword === "") {
-    Swal.fire({
-      icon: "error",
-      title: "Oops...",
-      text: "Please fill in all the fields!",
-    });
-    return;
-  }
-
-  localStorage.setItem(
-    "User",
-    JSON.stringify({
-      name: signupName,
-      email: signupEmail,
-      password: signupPassword,
-    })
+const registerUI = document.querySelector(".register-wrapper");
+const registerImg = document.querySelector(".registerImg"),
+  registerNameInputField = document.querySelector(".registerNameInput"),
+  emailInputField = document.querySelector(".registerEmailInput"),
+  passwordInputField = document.querySelector(".registerPasswordInput"),
+  successRegisterContainer = document.querySelector(
+    ".successRegisterContainer"
   );
+const loginPage = document.getElementById("login-page");
+const mainPage = document.getElementById("main-page");
+const loggedIn__user = document.querySelector(".loggedIn__user");
 
-  Swal.fire({
-    position: "top-center",
-    icon: "success",
-    title: "Signup Successfully",
-    showConfirmButton: false,
-    timer: 1500,
-  });
+const openDashboard = () => {
+  loginPage.style.display = "flex";
+  registerUI.style.display = "none";
+  courseCards.style.display = "none";
+  keySctions.style.display = "none";
+  resultDiv.style.display = "none";
+  topHeading.style.display = "none";
+  quizForm.style.display = "none";
+  mainPage.style.display = "none";
+};
 
-  signup.style.display = "none";
-  login.style.display = "block";
-}
+// Function to display Login form
 
-function loginForm(e) {
-  e.preventDefault();
-  let loginEmail = document.getElementById("loginEmail").value;
-  let loginPassword = document.getElementById("loginPassword").value;
-  let user = JSON.parse(localStorage.getItem("User"));
+const openLoginForm = () => {
+  loginEmailInput.value = "";
+  loginPasswordInput.value = "";
+  loginUI.style.display = "flex";
+  registerUI.style.display = "none";
+};
 
-  if (!user || loginEmail !== user.email || loginPassword !== user.password) {
+const openRegistrationForm = () => {
+  // Empty login fields
+  loginEmailInput.value = "";
+  loginPasswordInput.value = "";
+
+  // Empty the registration fields
+  registerNameInputField.value = "";
+  emailInputField.value = "";
+  passwordInputField.value = "";
+
+  // Hide the login page and show the reg page
+  loginUI.style.display = "none";
+  registerUI.style.display = "flex";
+};
+
+// Function to avoid empty fields
+const isEmpty = (str) => {
+  return !str || !str.trim().length;
+};
+
+const noNumbersInName = (str) => {
+  for (let i = 0; i < registerNameInputField.value.length; i++) {
+    if (str[i].trim() >= "0" && str[i].trim() <= "9") {
+      return true;
+    }
+  }
+  return false;
+};
+
+// Function to prevent name input less than two alphabets
+
+const nameInputSize = (str) => {
+  if (str.length <= 2) {
+    return true;
+  }
+  return false;
+};
+
+// Function to validate email
+
+const validateEmail = (str) => {
+  return str
+    .toLowerCase()
+    .match(
+      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+    );
+};
+
+// Function to check password length
+
+const passwordLength = (str) => {
+  if (str.length <= 5) {
+    return true;
+  }
+  return false;
+};
+
+let storage, arr, registeredUsers;
+
+// Function to check if the user is already registered
+const alreadyRegistered = () => {
+  storage = localStorage.getItem("Registered Users");
+  arr = JSON.parse(storage);
+  if (!arr || arr.length === 0) {
+    return false;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      (arr[i] &&
+        registerNameInputField.value.toLowerCase() === arr[i].register_name) ||
+      emailInputField.value.toLowerCase() === arr[i].register_email
+    ) {
+      return true;
+    }
+  }
+  return false;
+};
+
+// Function to register a user
+const register = () => {
+  if (noNumbersInName(registerNameInputField.value)) {
     Swal.fire({
       icon: "error",
-      title: "Oops...",
-      text: "Please enter correct Email and Password!",
+      title: "Name shouldn't contain numbers!",
+      showConfirmButton: false,
+      timer: 1500,
     });
-    return;
+  } else if (!validateEmail(emailInputField.value)) {
+    Swal.fire({
+      icon: "error",
+      title: "Invalid or incorrect email!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } else if (
+    isEmpty(registerNameInputField.value) &&
+    isEmpty(emailInputField.value) &&
+    isEmpty(passwordInputField.value)
+  ) {
+    Swal.fire({
+      icon: "error",
+      title: "Please fill the fields!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } else if (isEmpty(registerNameInputField.value)) {
+    Swal.fire({
+      icon: "error",
+      title: "Name can't be empty!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } else if (nameInputSize(registerNameInputField.value)) {
+    Swal.fire({
+      icon: "error",
+      title: "Name should contain more than 2 characters!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } else if (isEmpty(emailInputField.value)) {
+    Swal.fire({
+      icon: "error",
+      title: "Email can't be empty!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } else if (isEmpty(passwordInputField.value)) {
+    Swal.fire({
+      icon: "error",
+      title: "Password can't be empty!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } else if (passwordLength(passwordInputField.value)) {
+    Swal.fire({
+      icon: "error",
+      title: "Password should contain at least 6 characters!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } else if (alreadyRegistered()) {
+    Swal.fire({
+      icon: "error",
+      title: "The name or email already exists. Go to the Login Page.",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+  } else {
+    let storage = localStorage.getItem("Registered Users");
+    let arr = JSON.parse(storage) || [];
+    let registeredUsers = {
+      register_name: registerNameInputField.value.toLowerCase(),
+      register_email: emailInputField.value.toLowerCase(),
+      register_password: passwordInputField.value,
+    };
+
+    arr.push(registeredUsers);
+    localStorage.setItem("Registered Users", JSON.stringify(arr));
+
+    Swal.fire({
+      icon: "success",
+      title: "Registration successful!",
+      showConfirmButton: false,
+      timer: 1500,
+    });
+
+    successRegisterContainer.style.cssText = "display:flex !important";
+    registerImg.style.cssText = "height:528px !important";
+  }
+};
+
+const goToLogin = () => {
+  // Empty the registration fields before shwoing login page
+  registerNameInputField.value = "";
+  emailInputField.value = "";
+  passwordInputField.value = "";
+
+  // Hide the successful container div
+  successRegisterContainer.style.display = "none";
+
+  // Change the size of registration img to normal
+  registerImg.style.cssText = "height:489px !important";
+
+  // Hide the registration page and show login page
+  loginUI.style.display = "flex";
+  registerUI.style.display = "none";
+  mainPage.style.display = "none";
+};
+
+// Function to capitalize the first letter of name on dashboard
+
+const capitalizeFirstLetter = (str) => {
+  return str[0].toUpperCase() + str.slice(1);
+};
+
+// Function to login a user
+const login = () => {
+  let storage = localStorage.getItem("Registered Users");
+  let arr = JSON.parse(storage);
+  let flag2 = false;
+
+  if (!arr || arr.length === 0) {
+    arr = [];
   }
 
-  Swal.fire({
-    position: "top-center",
-    icon: "success",
-    title: "Login Successfully",
-    showConfirmButton: false,
-    timer: 1500,
-  });
+  for (let i = 0; i < arr.length; i++) {
+    if (
+      loginEmailInput.value.toLowerCase() === arr[i].register_email &&
+      loginPasswordInput.value === arr[i].register_password
+    ) {
+      Swal.fire({
+        icon: 'success',
+        title: 'Login successful!',
+        showConfirmButton: false,
+        timer: 1500
+      });
 
-  courseCards.style.display = "block";
-  login.style.display = "none";
-}
+      loginEmailInput.value = "";
+      loginPasswordInput.value = "";
+      flag2 = true;
+      loginPage.style.display = "none";
+      courseCards.style.display = "flex";
+      topHeading.style.display = "block";
+      mainPage.style.display = "none";
+      loggedIn__user.innerHTML = `${capitalizeFirstLetter(
+        arr[i].register_name || "User"
+      )}`;
+      break;
+    }
+  }
 
-function showSignupForm() {
-  signup.style.display = "block";
-  login.style.display = "none";
-}
+  if (!flag2) {
+    Swal.fire({
+      icon: 'error',
+      title: 'Incorrect credentials!',
+      showConfirmButton: false,
+      timer: 1500
+    });
+  }
+};
 
-function showLoginForm() {
-  login.style.display = "block";
-  signup.style.display = "none";
-}
+const startingPage = () => {
+  loginPage.style.display = "none";
+  courseCards.style.display = "none";
+  keySctions.style.display = "none";
+  resultDiv.style.display = "none";
+  topHeading.style.display = "none";
+  quizForm.style.display = "none";
+  mainPage.style.display = "block";
+};
 
-document.getElementById("openSignupForm").addEventListener("click", showSignupForm);
-document.getElementById("openLoginForm").addEventListener("click", showLoginForm);
-document.getElementById("signupBtn").addEventListener("click", signupForm);
-document.getElementById("loginBtn").addEventListener("click", loginForm);
+window.onload = startingPage;
