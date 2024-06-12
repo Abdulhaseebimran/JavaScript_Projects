@@ -1,7 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --bg-color-light: #ffffff;
+  --text-color-light: #000000;
+  --primary-bg-color-dark: #333333;
+  --bg-color-dark: #222222;
+  --text-color-dark: #e0e0e0;
+  --btn-bg-color-dark: #555555;
+  --btn-text-color-dark: #ffffff;
+  --bg-hover-dark: #444444;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Public Sans', sans-serif;
 }
 
 /* .navbar{

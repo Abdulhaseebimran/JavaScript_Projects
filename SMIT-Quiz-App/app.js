@@ -666,3 +666,35 @@ const startingPage = () => {
 };
 
 window.onload = startingPage;
+
+// Switch theme
+
+// const themeToggle = document.getElementById("themeToggle"),
+//   themeToggle__responsive = document.getElementById("themeToggle__responsive"),
+//   body = document.body;
+
+// const applyTheme = (theme) => {
+//   body.setAttribute("data-theme", theme);
+// };
+
+// const syncSwitches = (isDarkMode) => {
+//   themeToggle.checked = isDarkMode;
+//   themeToggle__responsive.checked = isDarkMode;
+// };
+
+// const toggleTheme = (event) => {
+//   const isDarkMode = event.target.checked;
+
+//   if (isDarkMode) {
+//     applyTheme("dark");
+//   } else {
+//     applyTheme("light");
+//   }
+
+//   syncSwitches(isDarkMode);
+// };
+
+// themeToggle.addEventListener("click", (event) => toggleTheme(event));
+// themeToggle__responsive.addEventListener("click", (event) =>
+//   toggleTheme(event)
+// );
